@@ -9,21 +9,17 @@ public class ApplicationManager {
     WebDriver wd;
     HelperUser helperUser;
 
-
-
     public void init() {
         wd = new ChromeDriver();
         wd.manage().window().maximize();
         wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        wd.navigate().to("https://telranedu.web.app");
-        helperUser=new HelperUser(wd);
+        wd.navigate().to("https://ilcarro.web.app");
+        helperUser= new HelperUser(wd);
 
     }
 
-
     public void stop() {
-       // wd.quit();
-
+        wd.quit();
     }
 
     public HelperUser getHelperUser() {
